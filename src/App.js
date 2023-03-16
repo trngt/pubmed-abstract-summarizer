@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import AbstractForm from './components/AbstractForm';
+import AbstractSummary from './components/AbstractSummary';
 
 function App() {
+  const [summaryData, setSummaryData] = useState({});
+
+  const handleSummaryData = (data) => {
+    setSummaryData(data);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>PubMed Abstract Summarizer</h1>
+      <AbstractForm onSummaryData={handleSummaryData} />
+      <AbstractSummary summaryData={summaryData} />
     </div>
   );
 }
