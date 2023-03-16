@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# PubMed Abstract Summarizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that summarizes PubMed abstracts using OpenAI's ChatGPT.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This application was developed with the help of OpenAI's ChatGPT, a powerful AI language model that provided guidance and assistance throughout the development process. The application utilizes the OpenAI API to generate summaries of PubMed abstracts, and a simple proxy server is used to bypass the CORS policy when making requests to the PubMed website.
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. [Project Setup](#project-setup)
+2. [Proxy Server Setup](#proxy-server-setup)
+3. [OpenAI API Setup](#openai-api-setup)
+4. [Troubleshooting and Debugging](#troubleshooting-and-debugging)
+5. [Deployment](#deployment)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Setup
 
-### `npm test`
+To set up the project, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository.
+2. Install the required dependencies: `npm install`.
+3. Start the development server: `npm start`.
 
-### `npm run build`
+## Proxy Server Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To bypass the CORS policy when making requests to the PubMed website, a proxy server is required. To set up the proxy server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install the required dependencies: `npm install express cors`.
+2. Create a proxy server using Express and CORS middleware.
+3. Set up a route to handle requests to the PubMed website.
+4. Run the proxy server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## OpenAI API Setup
 
-### `npm run eject`
+To set up the OpenAI API, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Sign up for an API key from OpenAI.
+2. Install the required dependencies: `npm install openai`.
+3. Configure the API by adding your API key to a `.env` file.
+4. Create a function to interact with the OpenAI API, handling chat completions.
+5. Use the API to generate summaries of PubMed abstracts.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Troubleshooting and Debugging
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+During the development process, we encountered several issues and found solutions to resolve them. Here are some common issues you might face:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Import/export errors: Ensure that you're using the correct import and export syntax, and verify that the named exports are properly defined.
+2. Module not found errors: Ensure that the required dependencies are installed and imported correctly.
+3. CORS policy errors: Verify that the proxy server is properly configured and running.
+4. Network errors: Check if the specified ports for the application and proxy server are available. If not, change the ports accordingly.
 
-## Learn More
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When deploying the application, you will still need the proxy server to handle requests to the PubMed website. To deploy the application, follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Build the React application for production: `npm run build`.
+2. Choose a hosting service or platform for the React application and follow their deployment instructions.
+3. Deploy the proxy server on a server or platform that supports Node.js applications.
+4. Update the React application's API endpoints to point to the deployed proxy server.
